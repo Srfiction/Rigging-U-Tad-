@@ -31,9 +31,9 @@ for element in every_element:
                     pass
 
 list_of_skins = list(dict.fromkeys(list_of_skins))
-list_of_multMatrix = [] #Lista donde se guardar·n todos los multMax para eliminarlos luego
+list_of_multMatrix = [] #Lista donde se guardar√°n todos los multMax para eliminarlos luego
 
-#Va aÒadiendo todos los nodos multMatrix a la lista
+#Va a√±adiendo todos los nodos multMatrix a la lista
 for i in list_of_skins:
     matrix_of_skin = cmds.listConnections('{}.matrix'.format(i))
     for element in matrix_of_skin:
@@ -41,10 +41,10 @@ for i in list_of_skins:
 list(dict.fromkeys(list_of_multMatrix))
     
 
-#Leer· todos los nodos de skin hasta que el diccionario estÈ vacio
+#Leer√° todos los nodos de skin hasta que el diccionario est√© vacio
 for _ in list_of_skins:
     dic_connections = {}
-     #por cada nodo asocia la conexiÛn de multMatrix con su Joint
+     #por cada nodo asocia la conexi√≥n de multMatrix con su Joint
     for i in list_of_skins:    
         matrix_list = cmds.listConnections('{}.matrix'.format(i))
         joint_list = cmds.listConnections('{}.influenceColor'.format(i))
@@ -56,11 +56,11 @@ for _ in list_of_skins:
             else:
                 pass
             c+=1
-      #El for se romper· cuando la lectura no aÒada ningun elemento al diccionario
+      #El for se romper√° cuando la lectura no a√±ada ningun elemento al diccionario
     if not dic_connections:
         break
     else:
-        #AquÌ conecta el hueso a su respectivo key en el diccionario
+        #Aqu√≠ conecta el hueso a su respectivo key en el diccionario
         for connections in dic_connections:
             jnt = dic_connections.get(connections)
             connections_temp_list = cmds.listConnections('{}.matrixSum'.format(connections),
