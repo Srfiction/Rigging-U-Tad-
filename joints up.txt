@@ -1,0 +1,4 @@
+joints = cmds.ls(type='joint')
+
+for jnt in joints:
+	cmds.setAttr('{}.displayLocalAxis'.format(jnt), 1)
